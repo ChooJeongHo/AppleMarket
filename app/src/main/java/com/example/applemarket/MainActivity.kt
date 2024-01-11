@@ -54,6 +54,7 @@ class MainActivity : AppCompatActivity() {
             popupNotification()
         }
 
+        // 알림 권한이 없다면, 사용자에게 권한 요청 (안드로이드 12 이상)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (!NotificationManagerCompat.from(this).areNotificationsEnabled()) {
                 // 알림 권한이 없다면, 사용자에게 권한 요청
