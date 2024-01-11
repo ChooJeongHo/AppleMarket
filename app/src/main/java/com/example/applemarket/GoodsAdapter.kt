@@ -13,7 +13,12 @@ class GoodsAdapter(val items: MutableList<Item>) : RecyclerView.Adapter<GoodsAda
         fun onClick(view : View, position : Int)
     }
 
+    interface ItemLongClick {
+        fun onLongClick(view : View, position : Int)
+    }
+
     var itemClick : ItemClick? = null
+    var itemLongClick : ItemLongClick? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GoodsAdapter.Holder {
         val binding = ItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -25,6 +30,10 @@ class GoodsAdapter(val items: MutableList<Item>) : RecyclerView.Adapter<GoodsAda
         val item = items[position]
         holder.itemView.setOnClickListener {
             itemClick?.onClick(it, position)
+        }
+        holder.itemView.setOnLongClickListener OnLongClickListener@{
+            itemLongClick?.onLongClick(it, position)
+            return@OnLongClickListener true
         }
         holder.iconIV.setImageResource(items[position].image)
         holder.name.text = items[position].name
@@ -52,5 +61,6 @@ class GoodsAdapter(val items: MutableList<Item>) : RecyclerView.Adapter<GoodsAda
         val price = binding.tvItemPrice
         val chats = binding.tvItemChats
         val likes = binding.tvItemLikes
+        val ivLike = binding.ivItemLikes
     }
 }

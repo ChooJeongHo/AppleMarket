@@ -5,5 +5,7 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.AppleMarket" parent="Base.Theme.AppleMarket" />
+    <style name="Theme.AppleMarket" parent="Base.Theme.AppleMarket">
+        <item name="windowActionBar">false</item>
+    </style>
 </resources>

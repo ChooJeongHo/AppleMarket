@@ -10,9 +10,9 @@
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
-        android:layout_height="630dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -30,16 +30,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@tools:sample/avatars" />
-
-            <ImageView
-                android:id="@+id/iv_back_detail"
-                android:layout_width="55dp"
-                android:layout_height="53dp"
-                android:layout_marginStart="24dp"
-                android:layout_marginTop="24dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/iv_item_detail"
-                app:srcCompat="@drawable/ic_back" />
 
             <ImageView
                 android:id="@+id/iv_profile_detail"
@@ -70,6 +60,39 @@
                 android:text="주소"
                 app:layout_constraintStart_toEndOf="@+id/iv_profile_detail"
                 app:layout_constraintTop_toBottomOf="@+id/tv_seller_detail" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="10dp"
+                android:text="39.3 ℃"
+                android:textColor="#009688"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/iv_face2"
+                app:layout_constraintEnd_toStartOf="@+id/iv_face2"
+                app:layout_constraintTop_toTopOf="@+id/iv_face2" />
+
+            <ImageView
+                android:id="@+id/iv_face2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginEnd="16dp"
+                android:src="@drawable/img_face"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_seller_detail" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="16dp"
+                android:text="매너온도"
+                android:textColor="#9F9D9D"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/iv_face2" />
 
             <View
                 android:id="@+id/line"
@@ -109,22 +132,29 @@
 
     </ScrollView>
 
+    <ImageView
+        android:id="@+id/iv_back_detail"
+        android:layout_width="55dp"
+        android:layout_height="53dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_back" />
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="70dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView">
+        app:layout_constraintStart_toStartOf="parent">
 
         <ImageView
             android:id="@+id/iv_like_detail"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginBottom="64dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -142,7 +172,7 @@
 
         <TextView
             android:id="@+id/tv_price_detail"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:text="상품가격"
@@ -151,6 +181,20 @@
             app:layout_constraintBottom_toBottomOf="@+id/iv_like_detail"
             app:layout_constraintStart_toEndOf="@+id/vertical_line"
             app:layout_constraintTop_toTopOf="@+id/iv_like_detail" />
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/text_bg_round"
+            android:gravity="center"
+            android:text="채팅하기"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
