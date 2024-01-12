@@ -46,10 +46,6 @@ class MainActivity : AppCompatActivity() {
         binding.itemRv.adapter = adapter
         binding.itemRv.layoutManager = LinearLayoutManager(this)
 
-        // 구분선 추가
-        val dividerItemDecoration = DividerItemDecoration(this, LinearLayoutManager.VERTICAL)
-        binding.itemRv.addItemDecoration(dividerItemDecoration)
-
         binding.ivBell.setOnClickListener {
             popupNotification()
         }
