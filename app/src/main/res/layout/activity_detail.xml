@@ -99,7 +99,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="2dp"
                 android:layout_marginTop="24dp"
-                android:background="@color/color_gray"
+                android:background="#CCCCCC"
                 app:layout_constraintTop_toBottomOf="@+id/iv_profile_detail" />
 
             <TextView

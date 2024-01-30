@@ -5,6 +5,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.applemarket.databinding.ItemBinding
+import java.text.DecimalFormat
 import java.text.NumberFormat
 
 class GoodsAdapter(val items: MutableList<Item>) : RecyclerView.Adapter<GoodsAdapter.Holder>() {
@@ -31,10 +32,11 @@ class GoodsAdapter(val items: MutableList<Item>) : RecyclerView.Adapter<GoodsAda
         holder.itemView.setOnClickListener {
             itemClick?.onClick(it, position)
         }
-        holder.itemView.setOnLongClickListener OnLongClickListener@{
+        holder.itemView.setOnLongClickListener {
             itemLongClick?.onLongClick(it, position)
-            return@OnLongClickListener true
+            return@setOnLongClickListener true
         }
+        // 람다식에 레이블을 붙여서 return을 사용할 수 있음
         holder.iconIV.setImageResource(items[position].image)
         holder.name.text = items[position].name
         holder.address.text = items[position].address
@@ -44,6 +46,7 @@ class GoodsAdapter(val items: MutableList<Item>) : RecyclerView.Adapter<GoodsAda
 
         val priceFormat = NumberFormat.getNumberInstance().format(item.price)
         holder.price.text = "${priceFormat}원"
+//        holder.price.text = DecimalFormat("###,###").format(item.price) + "원"
     }
 
     override fun getItemId(position: Int): Long {
@@ -61,6 +64,6 @@ class GoodsAdapter(val items: MutableList<Item>) : RecyclerView.Adapter<GoodsAda
         val price = binding.tvItemPrice
         val chats = binding.tvItemChats
         val likes = binding.tvItemLikes
-        val ivLike = binding.ivItemLikes
+        val isLike = false
     }
 }
